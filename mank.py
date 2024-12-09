@@ -1,9 +1,31 @@
 import time
-import os
 
+# Exibe a arte ASCII
+print("\033[H\033[J", end="")
+print(r" __  __    _    _   _ _  ___    ___  ____  ")
+print(r"|  \/  |  / \  | \ | | |/ / |  / _ \/ ___| ")
+print(r"| |\/| | / _ \ |  \| | ' /| | | | | \___ \ ")
+print(r"| |  | |/ ___ \| |\  | . \|_| | |_| |___) |")
+print(r"|_|  |_/_/   \_\_| \_|_|\_(_)  \___/|____/ ")
+print(r" _   ___   ___  ")
+print(r"/ | / _ \ / _ \ ")
+print(r"| || | | | | | |")
+print(r"| || |_| | |_| |")
+print(r"|_(_)___(_)___/ ")
+# for i in range(1):
+#             print("Carregando...")
+#             time.sleep(5)
+# print("50% pronto");
+# for i in range(1):
+#             print("Quase lá...")
+#             time.sleep(5)
+# print("Carregado");
+
+# Exibe a mensagem de boas-vindas
 print("Seja Bem Vindo(a) Essa é a versão 1.0.0 Do Mank Os!")
 print("Digite 'menu' para ver a lista de comandos, 'apps' para ver a lista de aplicativos ou 'help' para um guia completo de como usar o Mank.")
-
+import os
+os.system("color 0D")
 def gerenciador_arquivos():
     while True:
         print("\n========= GERENCIADOR DE ARQUIVOS =========")
@@ -86,31 +108,6 @@ def gerenciador_arquivos():
 
 # Loop principal do terminal
 while True:
-    
-    os.system("color 02")
-    print("\033[H\033[J", end="")
-    print(r" __  __    _    _   _ _  ___    ___  ____  ")
-    print(r"|  \/  |  / \  | \ | | |/ / |  / _ \/ ___| ")
-    print(r"| |\/| | / _ \ |  \| | ' /| | | | | \___ \ ")
-    print(r"| |  | |/ ___ \| |\  | . \|_| | |_| |___) |")
-    print(r"|_|  |_/_/   \_\_| \_|_|\_(_)  \___/|____/ ")
-    print(r" _   ___   ___  ")
-    print(r"/ | / _ \ / _ \ ")
-    print(r"| || | | | | | |")
-    print(r"| || |_| | |_| |")
-    print(r"|_(_)___(_)___/ ")
-    #for i in range(1):
-    #             print("Carregando...")
-    #             time.sleep(5)
-    #print("50% pronto");
-    #for i in range(1):
-    #             print("Quase lá...")
-    #             time.sleep(5)
-    #print("Carregado");
-
-# Exibe a mensagem de boas-vindas
-    print("Seja Bem Vindo(a) Essa é a versão 1.0.0 Do Mank Os!")
-    print("Digite 'menu' para ver a lista de comandos, 'apps' para ver a lista de aplicativos ou 'help' para um guia completo de como usar o Mank.")
     comandInput = input("C:\\> ").strip().lower()  # Transforma o input para minúsculas
 
     if comandInput == "":
@@ -194,25 +191,25 @@ while True:
         print("Formula 1 Instalado, Para Jogar digíte sud'run #00g1'")
 
     #Baixar e Rodar o Cross Frog
-    elif comandInput == "sudo cross frog" or comandInput == "sudo crossfrog" or comandInput == "sudocross frog":
+    elif comandInput == "sudo cross frog" or comandInput == "sudo crossfrog" or comandInput == "sudo cf":
         for i in range(10):
             print("Baixando Cross Frog ...", end="\r")
             time.sleep(1)
-        print("Cross frog instalado, Para Jogar digíte 'run #00g1'")
+        print("Cross frog instalado, Para Jogar digite run cross frogg")
 
     #Baixar e Rodar o Flying Wars
-    elif comandInput == "sudo flying wars" or comandInput == "sudo flyingwars" or comandInput == "sudoflywars" or comandInput == "sudo fw":
+    elif comandInput == "sudo #00g3":
         for i in range(10):
             print("Baixando Flying Wars...", end="\r")
             time.sleep(1)
-        print("Flying Wars Instalado, Para Jogar digíte 'run flyin wars ou fly wars '")
+        print("Flying Wars Instalado, Para Jogar digíte 'run #00g1'")
 
     #Baixar e Rodar o Avoid The Wall
     elif comandInput == "sudo #00g4":
         for i in range(10):
             print("Baixando Avoid The Wall...", end="\r")
             time.sleep(1)
-        print(" Avoid the Wall Instalado, Para Jogar digíte 'run #00g1'")
+        print(" Avoid the Wall Instalado, Para Jogar digíte run avoid ou run avoid the wall ou run avw")
 
     #Baixar e Rodar o Mank Explorer
     elif comandInput == "sudo explorer":
@@ -258,7 +255,7 @@ while True:
 
     elif comandInput == "whitehat":
         print("\033[H\033[J", end="")  # Comando para limpar a tela no terminal
-        import os
+        
         os.system("color1E")
         comandInput = input("~$ ").strip().lower()
 
