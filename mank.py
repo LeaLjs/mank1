@@ -134,7 +134,6 @@ while True:
         print("Avoid the Wall code:#00g4")
         print("==================================(Apps)==================================")
         print("Explorador de arquivos")
-        print("Mank Bash")
         print("Mankode Editor")
         print("Calculadora")
 
@@ -184,11 +183,11 @@ while True:
     elif comandInput == "clear":
         print("\033[H\033[J", end="")  # Comando para limpar a tela no terminal
     #Baixar e Rodar o Formula 1
-    elif comandInput == "sudo formula1" or comandInput == "sudo formula 1":
+    elif comandInput == "sudo formula1" or comandInput == "sudo formula 1" or comandInput == "sudo f1":
         for i in range(10):
             print("Baixando Formula 1...", end="\r")
             time.sleep(1)
-        print("Formula 1 Instalado, Para Jogar digíte sud'run #00g1'")
+        print("Formula 1 Instalado, Para Jogar digíte sudo f1 ou sudo formula 1")
 
     #Baixar e Rodar o Cross Frog
     elif comandInput == "sudo cross frog" or comandInput == "sudo crossfrog" or comandInput == "sudo cf":
@@ -216,28 +215,17 @@ while True:
            for i in range(1):
             print("Baixando Mank Explorer...", end="\r")
             time.sleep(8)
-            print("Mank Explorer instalados, Para Usar digíte 'run #00ap1'");
+            print("Mank Explorer instalados, Para Usar digíte explorer");
     elif comandInput == "run explorer":
                 print("Abrindo o Gerenciador de Arquivos...")
                 gerenciador_arquivos()
-               
-
-    #Baixar e Rodar o Mank Bash
-    elif comandInput == "sudo mank bash":
-         for i in range(1):
-            print("Baixando Mank Bash...", end="\r")
-            time.sleep(8)
-            print("Mank Explorer instalados, Para Usar digíte 'run #00ap2'");
-    elif comandInput == "run mank bash":
-                print("Abrindo o Mank Bash...")
-                
     
     # Baixar E Rodar O Mankode 
     elif comandInput == "sudo mankode":
             for i in range(1):
                 print("Baixando Mankode Editor...", end="\r")
             time.sleep(8)
-            print("Mankode Editor instalado, Para Usar digíte 'run #00ap3'");
+            print("Mankode Editor instalado, Para Usar digíte run mankode");
     elif comandInput == "run mankode":
         print("Abrindo o editor de texto...")
         import subprocess
