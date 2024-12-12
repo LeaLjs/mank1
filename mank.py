@@ -1,5 +1,6 @@
 import time
-
+import pygame
+import random
 # Exibe a arte ASCII
 print("\033[H\033[J", end="")
 print(r" __  __    _    _   _ _  ___    ___  ____  ")
@@ -106,12 +107,30 @@ def gerenciador_arquivos():
         else:
             print("\nOpção inválida. Tente novamente.")
 
+
+def calculadora():
+    while True:
+        print("*+-/%*+-/%*+-/%*+-/%*+-/% -(CALCULADORA MANK)- *+-/%*+-/%*+-/%*+-/%*+-/%")
+        print("O Que você deseja fazer?")
+        print("1 calculo")
+        print("2 Multiplicação")
+        print("3 Divisão")
+        escolheConta = int(input(""))
+        
+        if escolheConta == 1:
+            num = int(input("Faça a conta aqui:"))
+            print("o resultado da conta foi" + num) 
+    
 # Loop principal do terminal
 while True:
     comandInput = input("C:\\> ").strip().lower()  # Transforma o input para minúsculas
-
     if comandInput == "":
         print("Você não escreveu nada. Tente novamente.")
+
+    elif comandInput == "run tetris":
+        print("Abrindo o tetris...")
+        import subprocess
+        subprocess.run(["python", "tetris.py"])  # Nome do arquivo do editor
 
     elif comandInput == "menu":
         print("Bem Vindo Ao Menu do Mank")
@@ -122,16 +141,16 @@ while True:
         print("4. cd - Abre Uma Pasta")
         print("5. date - Mostra A data dia e ano")
         print("6. help - Exibe uma mensagem de ajuda")
-        print("7. whiteHat - te Dá o Controle Total")
+        print("7. mankill - te dá o controle Total")
         print("8. sair - Fecha o Mank :(")
 
     elif comandInput == "apps":
         print("Mank Store ;)")
         print("==================================(Jogos)==================================")
-        print("Formula 1 code:#00g1")
-        print("Cross Frog code:#00g2")
-        print("Flying Wars code:#00g3")
-        print("Avoid the Wall code:#00g4")
+        print("Formula 1")
+        print("Cross Frog")
+        print("Tetris")
+        print("Avoid the Wall")
         print("==================================(Apps)==================================")
         print("Explorador de arquivos")
         print("Mankode Editor")
@@ -156,14 +175,13 @@ while True:
             print(f"\nPasta '{nome_pasta}' criada com sucesso!")
         if os.payt.exist(nome_pasta):
             print("Esta pasta já existe")
-        
 
     elif comandInput == "date":
         from datetime import datetime
-        data_hora_atual = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        print(f"Data e hora atual: {data_hora_atual}")
-
-    
+        agora = datetime.now().strftime("%H:%M:%S")
+        print(f"\rHora Atual: {agora}" , end="", flush=True)
+        time.sleep(1)
+           
     elif comandInput == "cd":
         itens = os.listdir()
         if itens:
@@ -197,51 +215,53 @@ while True:
         print("Cross frog instalado, Para Jogar digite run cross frogg")
 
     #Baixar e Rodar o Flying Wars
-    elif comandInput == "sudo #00g3":
+    elif comandInput == "sudo flying wars" or comandInput == "sudo fw" or comandInput == "sudo fly wars":
         for i in range(10):
             print("Baixando Flying Wars...", end="\r")
             time.sleep(1)
-        print("Flying Wars Instalado, Para Jogar digíte 'run #00g1'")
+        print("Flying Wars Instalado, Para Jogar digíte run Fly wars ")
 
     #Baixar e Rodar o Avoid The Wall
-    elif comandInput == "sudo #00g4":
+    elif comandInput == "sudo avoid the wall" or comandInput == "sudo atw" or comandInput == "sudo avoidthewall":
         for i in range(10):
             print("Baixando Avoid The Wall...", end="\r")
             time.sleep(1)
         print(" Avoid the Wall Instalado, Para Jogar digíte run avoid ou run avoid the wall ou run avw")
 
     #Baixar e Rodar o Mank Explorer
-    elif comandInput == "sudo explorer":
-           for i in range(1):
+    elif comandInput == "sudo explorer" or comandInput == "sudo mank explorer":
+        for i in range(1):
             print("Baixando Mank Explorer...", end="\r")
             time.sleep(8)
             print("Mank Explorer instalados, Para Usar digíte explorer");
-    elif comandInput == "run explorer":
+    elif comandInput == "run explorer ":
                 print("Abrindo o Gerenciador de Arquivos...")
-                gerenciador_arquivos()
-    
+                import subprocess
+                subprocess.run(["python", "gerenciador_arquivos.py"])  # Nome do arquivo do editor
+
     # Baixar E Rodar O Mankode 
     elif comandInput == "sudo mankode":
-            for i in range(1):
-                print("Baixando Mankode Editor...", end="\r")
+        for i in range(1):
+            print("Baixando Mankode Editor...", end="\r")
             time.sleep(8)
             print("Mankode Editor instalado, Para Usar digíte run mankode");
     elif comandInput == "run mankode":
-        print("Abrindo o editor de texto...")
-        import subprocess
-        subprocess.run(["python", "mankode_editor.py"])  # Nome do arquivo do editor
+            print("Abrindo o editor de texto...")
+            import subprocess
+            subprocess.run(["python", "mankode_editor.py"])  # Nome do arquivo do editor
     
     elif comandInput == "sudo calculadora":
-            for i in range(1):
-                print("Baixando Calculadora Mank...", end="\r")
+        for i in range(1):
+            print("Baixando Calculadora Mank...", end="\r")
             time.sleep(8)
             print("Calculadora instalada, Para Usar digíte 'run #00ap3'");
     elif comandInput == "run calculadora":
-        print("Abrindo Calculadora...")
-        import subprocess
-        subprocess.run(["python", "mankode_editor.py"])  # Nome do arquivo do editor
+            print("Abrindo Calculadora...")
+            import subprocess
+            subprocess.run(["python", "calculadora.py"]) 
+            
 
-    elif comandInput == "whitehat":
+    elif comandInput == "mankill":
         print("\033[H\033[J", end="")  # Comando para limpar a tela no terminal
         
         os.system("color1E")
